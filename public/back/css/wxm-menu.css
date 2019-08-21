@@ -1,0 +1,22 @@
+.wxm_menu_style{
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    border: 1px solid #f7f7f7;
+    float: left;
+    padding-top: 35px;
+}
+
+.wxm_menu_li{
+    text-align: center;
+    border: 0px;
+}
+
+.wxm_menu_img{
+    width: 50px;
+    height: 50px;
+}
+
+.wxm_menu_redio{
+    margin-top: 50px;
+}

@@ -1,0 +1,40 @@
+.btn-style{
+	background: #f7f7f7;
+	color: #b8b8b8;
+	border: 1px solid #f7f7f7;
+}
+
+.btn-style:hover{
+	color:#00a65a;
+	border-color:#008d4c;
+}
+
+.xc_member_search {
+    height: 34px;
+    background: #f7f7f7;
+    border-radius: 5px;
+}
+
+.xc_search {
+	outline:none;
+	border: 0;
+    height: 34px;
+    width: 100%;
+    background: #f7f7f7;
+    float: left;
+}
+
+.xc_search::-webkit-input-placeholder {
+	color:#b8b8b8;
+}
+
+.icon-user{
+	position: absolute;
+	top: 10px;
+	margin-left: 5px;
+	background-image: url(../img/search.png);
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	float: left;
+}
