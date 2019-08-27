@@ -111,21 +111,14 @@
               <textarea class="form-control" rows="5" id="add_http_path" placeholder="多个路径请用英文分号;隔开"></textarea>
             </div>
         </div>
-        <div class="box-body">
+        <!-- <div class="box-body">
             <label class="col-sm-2 text-right label-style">菜单</label>
             <div class="col-sm-8">
               <select id = 'menu' class="form-control" style="margin-top:-5px;">
                 <option value = '0'>无</option>
-                <?php
-                foreach ($menus as $key => $value) {
-                    ?>
-                <option value = "{{$value['id']}}">{{$value['title']}}</option>
-                    <?php
-                }
-                ?>
               </select>
             </div>
-        </div>
+        </div> -->
         <div class="box-body">
            <div class="col-sm-10">
              <button type="button" class="btn btn-primary" style='float: right;' onclick="add_permission();return false;">提交</button>
@@ -234,7 +227,7 @@
   }
   //add new permission
   function add_permission(){
-    var menu = $('#menu').val();
+    // var menu = $('#menu').val();
     var title = $('#add_tittle').val();
     if(title == ''){
         failed('请输入权限名称');
@@ -247,7 +240,7 @@
     }
     var params = {
         'name' : title, 
-        'menu' : menu,
+        'menu' : 0,
         'http_path'  : http_path,
     };
     $.ajax({
