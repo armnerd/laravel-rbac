@@ -11,13 +11,13 @@
 |
 */
 
-//登录
+// 登录
 Route::get('login', 'HomeController@login');
 Route::post('dologin', 'HomeController@dologin');
 Route::get('logout', 'HomeController@logout');
 
 Route::group(['middleware' => ['check']], function () {
-    //RBAC
+    // RBAC
     Route::get('/', 'HomeController@index');
     Route::get('user/list', 'Admin\UserController@list');//用户列表
     Route::get('user/add', 'Admin\UserController@add');//增加用户
@@ -45,9 +45,24 @@ Route::group(['middleware' => ['check']], function () {
     // Route::get('oprate/logs', 'Admin\OprateController@logs');//管理端日志
     
 
-    //页面开发示例
+    // 页面开发示例
     Route::get('demo/table/list', 'Admin\DemoController@list');
     Route::get('demo/form/base', 'Admin\DemoController@base');
     Route::get('demo/form/advance', 'Admin\DemoController@advance');
     Route::get('demo/icons', 'Admin\DemoController@icons');
 });
+
+// 项目规划
+Route::get('project/list', 'ProjectController@index');
+Route::get('project/add', 'ProjectController@add');
+Route::post('project/save', 'ProjectController@save');
+Route::post('project/del', 'ProjectController@del');
+
+// 功能拆分
+Route::get('project/modules/list', 'ModulesController@index');
+Route::get('project/modules/add', 'ModulesController@add');
+Route::get('project/modules/edit', 'ModulesController@edit');
+Route::post('project/modules/save', 'ModulesController@save');
+Route::post('project/modules/del', 'ModulesController@del');
+Route::get('project/modules/developer', 'ModulesController@developer');
+Route::post('project/modules/developer/change', 'ModulesController@change');
