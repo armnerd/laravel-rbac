@@ -28,11 +28,7 @@
             <td><?=$manager[$scheduleInfo['manager']]?></td>
             <td>
               <select id='team' name='team' class="form-control">
-                <option value='1' >API</option>
-                <option value='2' >WMS</option>
-                <option value='3' >CMS</option>
-                <option value='4' selected="selected">ERP</option>
-                <option value='5' >VC</option>
+                <option selected="selected"><?=$team[$scheduleInfo['team']]?></option>
               </select>
             </td>
             <td>
@@ -99,7 +95,7 @@
           <tr>
           	<td>1</td>
           	<td>
-              <select id='priority' name='priority' class="form-control">
+              <select id='priority' name='priority' class="form-control priority">
                 <option value='1' selected="selected">高</option>
                 <option value='2' >中</option>
                 <option value='3' >低</option>
@@ -138,7 +134,7 @@
             	上线时间：<?=date('Y-m-d', time())?><br/>
             </td>
             <td>
-              <select id='priority' name='priority' class="form-control">
+              <select id='status' name='status' class="form-control status">
                 <option value='1' selected="selected">开发中</option>
                 <option value='2' >测试中</option>
                 <option value='3' >已上线</option>
@@ -157,9 +153,9 @@
           </tr>
 
           <tr>
-          	<td>1</td>
+          	<td>2</td>
           	<td>
-              <select id='priority' name='priority' class="form-control">
+              <select id='priority' name='priority' class="form-control priority">
                 <option value='1' selected="selected">高</option>
                 <option value='2' >中</option>
                 <option value='3' >低</option>
@@ -198,7 +194,7 @@
             	上线时间：<?=date('Y-m-d', time())?><br/>
             </td>
             <td>
-              <select id='priority' name='priority' class="form-control">
+              <select id='status' name='status' class="form-control status">
                 <option value='1' selected="selected">开发中</option>
                 <option value='2' >测试中</option>
                 <option value='3' >已上线</option>
@@ -217,9 +213,9 @@
           </tr>
 
           <tr>
-          	<td>1</td>
+          	<td>3</td>
           	<td>
-              <select id='priority' name='priority' class="form-control">
+              <select id='priority' name='priority' class="form-control priority">
                 <option value='1' selected="selected">高</option>
                 <option value='2' >中</option>
                 <option value='3' >低</option>
@@ -258,7 +254,7 @@
             	上线时间：<?=date('Y-m-d', time())?><br/>
             </td>
             <td>
-              <select id='priority' name='priority' class="form-control">
+              <select id='status' name='status' class="form-control status">
                 <option value='1' selected="selected">开发中</option>
                 <option value='2' >测试中</option>
                 <option value='3' >已上线</option>
@@ -288,5 +284,19 @@
 function add(){
 	$.pjax({ url: '/project/modules/add', container: '#pjax-container' });
 }
+
+$(".priority").change( function() {
+  var content = '确认更改优先级?';
+  beforeAction(content, 'modal-success', function(){
+      // undo
+  });
+});
+
+$(".status").change( function() {
+  var content = '确认更改状态?';
+  beforeAction(content, 'modal-success', function(){
+      // undo
+  });
+});
 </script>
 @endsection
